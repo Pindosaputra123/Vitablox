@@ -21,14 +21,14 @@
     "typescript"
   ],
   "license": "MIT",
-  "author": "rizalahmaddd",
-  "homepage": "https://cv.solusikoding.com",
+  "author": "Pindosaputra123",
+  "homepage": "https://vitabox.my.id",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rizalahmaddd/cv-maker.git"
+    "url": "https://github.com/Pindosaputra123/Vitablox.git"
   },
   "bugs": {
-    "url": "https://github.com/rizalahmaddd/cv-maker/issues"
+    "url": "https://github.com/Pindosaputra123/Vitablox/issues"
   },
   "engines": {
     "node": ">=22"
