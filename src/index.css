@@ -1,0 +1,2266 @@
+@import 'tailwindcss';
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/plus-jakarta-sans/800.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+
+/* NEO BRUTALISM DESIGN SYSTEM */
+
+:root {
+  --neo-bg: #fffdf5;
+  --neo-yellow: #fde047;
+  --neo-coral: #ff8a65;
+  --neo-mint: #a7f3d0;
+  --neo-black: #111111;
+  --neo-border: 3px solid var(--neo-black);
+  --neo-shadow: 4px 4px 0px var(--neo-black);
+}
+
+body {
+  background: var(--neo-bg);
+  color: var(--neo-black);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.neo-card {
+  border: var(--neo-border);
+  background: white;
+  box-shadow: var(--neo-shadow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.neo-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--neo-black);
+}
+
+.neo-button {
+  border: 2px solid var(--neo-black);
+  box-shadow: 3px 3px 0px var(--neo-black);
+  font-weight: 900;
+  transition: all 0.15s ease;
+}
+
+.neo-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
+::selection {
+  background: var(--neo-yellow);
+  color: var(--neo-black);
+}
+
+
+/* NEO BRUTALISM - NEW CV PAGE */
+
+.neo-form input,
+.neo-form select,
+.neo-form textarea {
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-weight: 700;
+  box-shadow: 3px 3px 0 #111111;
+  transition: 0.15s ease;
+}
+
+.neo-form input:focus,
+.neo-form select:focus,
+.neo-form textarea:focus {
+  outline: 2px solid #fde047 !important;
+  outline-offset: 2px;
+  box-shadow: 4px 4px 0 #111111;
+}
+
+.neo-form input::placeholder {
+  color: #888888 !important;
+  font-weight: 500;
+}
+
+.neo-form label {
+  color: #111111 !important;
+  font-weight: 900 !important;
+}
+
+.neo-form [role="radiogroup"] {
+  gap: 12px;
+}
+
+.neo-form [role="radiogroup"] button {
+  border-radius: 0 !important;
+}
+
+.neo-form button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* NEO BRUTALISM - LANGUAGE SELECTOR */
+.neo-language {
+  width: 100%;
+}
+
+/* Container bahasa */
+.neo-language > div {
+  background: #ffffff !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  padding: 4px !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+/* Semua pilihan bahasa */
+.neo-language button {
+  min-height: 44px;
+  border: 2px solid transparent !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-weight: 900 !important;
+  box-shadow: none !important;
+  transition: 0.15s ease !important;
+}
+
+/* Bahasa yang sedang dipilih */
+.neo-language button[aria-pressed="true"],
+.neo-language button[aria-selected="true"],
+.neo-language button[aria-checked="true"],
+.neo-language button[data-state="on"],
+.neo-language button.active {
+  background: #A7F3D0 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  box-shadow: 2px 2px 0 #111111 !important;
+}
+
+/* Hover */
+.neo-language button:hover {
+  background: #FDE047 !important;
+  color: #111111 !important;
+}
+
+/* Focus */
+.neo-language button:focus-visible {
+  outline: 2px solid #111111 !important;
+  outline-offset: 2px;
+}
+
+
+/* =====================================
+   IMPORT CV - NEO BRUTALISM
+===================================== */
+
+.neo-import {
+  color: #111111;
+}
+
+/* CARD */
+.neo-import-card {
+  min-width: 0;
+  padding: 20px;
+  background: #ffffff;
+  border: 3px solid #111111;
+  box-shadow: 5px 5px 0 #111111;
+}
+
+/* CARD HEADING */
+.neo-import-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.neo-import-heading h2 {
+  font-size: 17px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.4px;
+  color: #111111;
+}
+
+.neo-import-heading p {
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #666666;
+}
+
+/* NUMBER LABEL */
+.neo-number {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 2px solid #111111;
+  font-size: 19px;
+  font-weight: 900;
+  color: #111111;
+}
+
+/* FORM LABEL */
+.neo-import label:not([for]) {
+  color: #111111;
+}
+
+.neo-import label span {
+  font-weight: 700;
+}
+
+/* INPUT */
+.neo-import input:not([type="checkbox"]):not([type="file"]),
+.neo-import textarea,
+.neo-import select {
+  width: 100%;
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+  font-weight: 600;
+}
+
+.neo-import input::placeholder,
+.neo-import textarea::placeholder {
+  color: #888888 !important;
+  opacity: 1;
+}
+
+/* CHECKBOX */
+.neo-import .neo-checkbox {
+  accent-color: #A7F3D0;
+  border: 2px solid #111111;
+  border-radius: 0;
+}
+
+/* TEXT AREA */
+.neo-import textarea {
+  min-height: 180px;
+  resize: vertical;
+  padding: 12px;
+}
+
+/* SEGMENTED */
+.neo-import .neo-language {
+  height: 58px;
+  width: 100%;
+}
+
+.neo-import .neo-language > div {
+  height: 58px !important;
+  min-height: 58px !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px !important;
+  padding: 4px !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+.neo-import .neo-language button {
+  border: 2px solid transparent !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-weight: 900 !important;
+  box-shadow: none !important;
+}
+
+.neo-import .neo-language button[aria-pressed="true"],
+.neo-import .neo-language button[aria-selected="true"],
+.neo-import .neo-language button[aria-checked="true"],
+.neo-import .neo-language button[data-state="on"],
+.neo-import .neo-language button.active {
+  background: #A7F3D0 !important;
+  border: 2px solid #111111 !important;
+  color: #111111 !important;
+  box-shadow: 2px 2px 0 #111111 !important;
+}
+
+/* FILE UPLOAD */
+.neo-import input[type="file"] {
+  box-shadow: none !important;
+}
+
+/* DETAILS */
+.neo-import details summary {
+  cursor: pointer;
+  font-weight: 900;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .neo-import-card {
+    padding: 15px;
+    box-shadow: 4px 4px 0 #111111;
+  }
+
+  .neo-import-heading h2 {
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================
+   PERSONAL FORM - NEO BRUTALISM
+========================================= */
+
+.neo-personal {
+  color: #111111;
+}
+
+/* LABEL */
+.neo-personal label,
+.neo-personal legend {
+  color: #111111 !important;
+  font-weight: 900 !important;
+  font-size: 13px;
+}
+
+/* INPUT DAN SELECT */
+.neo-personal input:not([type="checkbox"]):not([type="file"]),
+.neo-personal select,
+.neo-personal textarea {
+  width: 100%;
+  min-height: 46px;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  font-weight: 600 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+  transition: 0.15s ease;
+}
+
+/* PLACEHOLDER */
+.neo-personal input::placeholder,
+.neo-personal textarea::placeholder {
+  color: #888888 !important;
+  opacity: 1 !important;
+}
+
+/* FOCUS */
+.neo-personal input:focus,
+.neo-personal select:focus,
+.neo-personal textarea:focus {
+  outline: 2px solid #FDE047 !important;
+  outline-offset: 2px;
+  background: #ffffff !important;
+}
+
+/* PHOTO */
+.neo-photo-field {
+  border-radius: 0 !important;
+}
+
+.neo-photo-field img {
+  border-radius: 0 !important;
+}
+
+/* LINK ITEMS */
+.neo-link-item {
+  border-radius: 0 !important;
+}
+
+.neo-link-item select,
+.neo-link-item input {
+  min-width: 0;
+}
+
+/* CHECKBOX */
+.neo-personal input[type="checkbox"] {
+  accent-color: #A7F3D0;
+  border: 2px solid #111111;
+  border-radius: 0;
+}
+
+/* SIM BUTTONS */
+.neo-personal fieldset button[role="checkbox"] {
+  border-radius: 0 !important;
+}
+
+/* BUTTONS */
+.neo-personal button {
+  border-radius: 0 !important;
+}
+
+/* DATA LIST */
+.neo-personal datalist {
+  background: #ffffff;
+}
+
+/* HINT TEXT */
+.neo-personal .text-muted {
+  color: #666666 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .neo-personal {
+    gap: 16px;
+  }
+
+  .neo-photo-field {
+    padding: 12px;
+  }
+}
+
+
+/* =====================================
+   CV EDITOR - NEO BRUTALISM
+===================================== */
+
+.neo-editor {
+  --neo-black: #111111;
+  --neo-cream: #FFFDF5;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  color: var(--neo-black);
+}
+
+/* ALL BUTTONS */
+.neo-editor button {
+  border-radius: 0 !important;
+}
+
+/* EDITOR PANEL */
+.neo-editor-panel {
+  border-radius: 0 !important;
+}
+
+.neo-editor-panel input:not([type="checkbox"]):not([type="file"]),
+.neo-editor-panel select,
+.neo-editor-panel textarea {
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  background: white !important;
+  color: var(--neo-black) !important;
+  box-shadow: 3px 3px 0 var(--neo-black) !important;
+  font-weight: 600;
+}
+
+.neo-editor-panel input::placeholder,
+.neo-editor-panel textarea::placeholder {
+  color: #777 !important;
+  opacity: 1;
+}
+
+.neo-editor-panel input:focus,
+.neo-editor-panel select:focus,
+.neo-editor-panel textarea:focus {
+  outline: 2px solid var(--neo-yellow) !important;
+  outline-offset: 2px;
+}
+
+/* FORM FIELD */
+.neo-editor-panel label {
+  font-weight: 800;
+  color: var(--neo-black);
+}
+
+/* NAVIGATION */
+.neo-editor nav {
+  gap: 7px;
+}
+
+.neo-editor nav button {
+  transition: background 0.15s ease;
+}
+
+.neo-editor nav button:focus-visible {
+  outline: 2px solid var(--neo-black);
+  outline-offset: 2px;
+}
+
+/* SORTABLE ITEMS */
+.neo-editor nav [role="button"] {
+  border-radius: 0 !important;
+}
+
+/* PDF PREVIEW */
+.neo-pdf-preview {
+  border-radius: 0 !important;
+  overflow: hidden;
+}
+
+/* MOBILE BOTTOM BAR */
+.neo-mobile-bar {
+  box-shadow: 0 -3px 0 rgba(17, 17, 17, 0.05);
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.neo-mobile-bar button {
+  min-height: 46px;
+  border-radius: 0 !important;
+}
+
+/* ADD SECTION */
+.neo-editor [role="dialog"] button {
+  border-radius: 0 !important;
+}
+
+/* SHEET */
+.neo-editor [data-radix-dialog-content] {
+  border: 3px solid var(--neo-black);
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0 var(--neo-black);
+}
+
+/* ALERTS */
+.neo-editor [role="alert"] {
+  border: 2px solid var(--neo-black);
+  border-radius: 0 !important;
+  color: var(--neo-black);
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .neo-editor-panel {
+    padding: 14px;
+    box-shadow: 4px 4px 0 var(--neo-black);
+  }
+
+  .neo-mobile-bar {
+    gap: 8px;
+  }
+
+  .neo-editor-panel h2 {
+    font-size: 18px;
+  }
+}
+
+
+/* =========================================
+   FIX NEO BRUTALISM - FORM PENDIDIKAN
+   PENGALAMAN KERJA DAN ENTRY CV
+========================================= */
+
+/* KARTU ENTRY */
+.neo-editor-panel .bg-surface,
+.neo-editor-panel .bg-sunken {
+  background-color: #ffffff !important;
+  color: #111111 !important;
+  border-radius: 0 !important;
+}
+
+/* HEADER ACCORDION / ENTRY */
+.neo-editor-panel button.bg-surface,
+.neo-editor-panel button.bg-sunken {
+  background: #A7F3D0 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  font-weight: 900 !important;
+}
+
+/* BAGIAN ISIAN ENTRY */
+.neo-editor-panel [class*="border-line"] {
+  border-color: #111111 !important;
+}
+
+/* LABEL FORM */
+.neo-editor-panel label,
+.neo-editor-panel legend {
+  color: #111111 !important;
+  font-weight: 800 !important;
+  opacity: 1 !important;
+}
+
+/* TEKS JUDUL DAN KETERANGAN */
+.neo-editor-panel .text-muted {
+  color: #555555 !important;
+}
+
+.neo-editor-panel .text-text {
+  color: #111111 !important;
+}
+
+/* SEMUA INPUT */
+.neo-editor-panel input:not([type="checkbox"]):not([type="radio"]),
+.neo-editor-panel textarea,
+.neo-editor-panel select {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+/* PLACEHOLDER */
+.neo-editor-panel input::placeholder,
+.neo-editor-panel textarea::placeholder {
+  color: #888888 !important;
+  opacity: 1 !important;
+}
+
+/* FOCUS INPUT */
+.neo-editor-panel input:focus,
+.neo-editor-panel textarea:focus,
+.neo-editor-panel select:focus {
+  outline: 2px solid #FDE047 !important;
+  outline-offset: 2px;
+}
+
+/* CHECKBOX */
+.neo-editor-panel input[type="checkbox"] {
+  accent-color: #A7F3D0;
+  border: 2px solid #111111;
+  border-radius: 0;
+}
+
+/* BUTTON TAMBAH ENTRY */
+.neo-editor-panel button {
+  border-radius: 0 !important;
+}
+
+/* HOVER */
+.neo-editor-panel button:hover {
+  transition: background 0.15s ease;
+}
+
+
+/* =========================================
+   CV VIEW & DOWNLOAD - NEO BRUTALISM
+========================================= */
+
+.neo-view {
+  --neo-black: #111111;
+  --neo-cream: #FFFDF5;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  color: var(--neo-black);
+}
+
+/* MAIN CARDS */
+.neo-view .order-1 > div,
+.neo-view .order-1 > section {
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  background: #FFFFFF !important;
+  box-shadow: 5px 5px 0 var(--neo-black) !important;
+  padding: 18px !important;
+}
+
+/* SECTION TITLES */
+.neo-view h2,
+.neo-view h3 {
+  color: #111111;
+  font-weight: 900;
+}
+
+/* FORM TEXTAREA */
+.neo-view textarea,
+.neo-view .neo-textarea {
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  background: #FFFFFF !important;
+  color: #111111 !important;
+  box-shadow: 3px 3px 0 var(--neo-black) !important;
+}
+
+
+/* =================================
+   NEO BRUTALISM DOWNLOAD BUTTONS
+================================= */
+
+/* UNDUH PDF */
+.neo-view .neo-download-primary {
+  display: flex !important;
+  width: 100%;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  background: #FDE047 !important;
+  color: #111111 !important;
+
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+
+  font-weight: 900 !important;
+  box-shadow: 4px 4px 0 #111111 !important;
+}
+
+.neo-view .neo-download-primary:hover {
+  background: #A7F3D0 !important;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #111111 !important;
+}
+
+/* BAGIKAN */
+.neo-view .neo-share-button {
+  display: flex !important;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  background: #A7F3D0 !important;
+  color: #111111 !important;
+
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+
+  font-weight: 900 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+.neo-view .neo-share-button:hover {
+  background: #FDE047 !important;
+}
+
+/* CETAK */
+.neo-view .neo-print-button {
+  display: flex !important;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  background: #C4B5FD !important;
+  color: #111111 !important;
+
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+
+  font-weight: 900 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+.neo-view .neo-print-button:hover {
+  background: #FF8A65 !important;
+}
+
+/* JARAK ANTARTOMBOL */
+.neo-view .neo-download-primary,
+.neo-view .neo-share-button,
+.neo-view .neo-print-button {
+  margin: 0;
+}
+
+/* FORMAT DOWNLOAD */
+.neo-view .neo-format-button {
+  border-radius: 0 !important;
+}
+
+.neo-view .neo-format-button:focus-visible {
+  outline: 2px solid var(--neo-black);
+  outline-offset: 3px;
+}
+
+/* PDF PREVIEW FRAME */
+.neo-view .order-2 {
+  min-width: 0;
+}
+
+.neo-view .order-2 > div {
+  border: 3px solid var(--neo-black);
+  border-radius: 0 !important;
+  box-shadow: 5px 5px 0 var(--neo-black);
+  overflow: hidden;
+}
+
+/* ALERT */
+.neo-view [role="alert"] {
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  background: #FFF0E5 !important;
+  color: #111111 !important;
+  box-shadow: 3px 3px 0 var(--neo-black);
+}
+
+/* TOGGLE */
+.neo-view input[type="checkbox"] {
+  accent-color: #A7F3D0;
+}
+
+/* LINKS */
+.neo-view a {
+  color: #111111;
+  font-weight: 800;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .neo-view .order-1 > div,
+  .neo-view .order-1 > section {
+    padding: 14px !important;
+    box-shadow: 4px 4px 0 var(--neo-black) !important;
+  }
+
+  .neo-view .neo-format-button {
+    min-height: 64px;
+  }
+}
+
+
+/* =========================================
+   LETTERS PAGE - NEO BRUTALISM
+========================================= */
+
+
+.neo-letters {
+  --neo-black: #111111;
+  --neo-cream: #FFFDF5;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  background: var(--neo-cream);
+  color: var(--neo-black);
+}
+
+/* LETTER CARD */
+.neo-letters .neo-letter-card {
+  border-radius: 0 !important;
+  border: 2px solid var(--neo-black) !important;
+  background: #ffffff !important;
+  color: #111111 !important;
+  box-shadow: 5px 5px 0 var(--neo-black);
+}
+
+/* CARD HOVER */
+.neo-letters .neo-letter-card:hover {
+  background: #FFFDF5 !important;
+}
+
+/* CARD TITLE */
+.neo-letters .neo-letter-card a {
+  color: #111111 !important;
+  text-decoration: none;
+}
+
+.neo-letters .neo-letter-card a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+/* CARD TEXT */
+.neo-letters .neo-letter-card p {
+  color: #111111;
+}
+
+.neo-letters .neo-letter-card .text-muted {
+  color: #666666 !important;
+}
+
+/* ALL BUTTONS */
+.neo-letters button {
+  border-radius: 0 !important;
+}
+
+/* SELECT */
+.neo-letters select,
+.neo-letters .neo-letter-select {
+  background: #ffffff !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+  font-weight: 700;
+}
+
+/* EMPTY STATE - BLACK TO YELLOW */
+.neo-letters .neo-letter-empty {
+  background: #FDE047 !important;
+  color: #111111 !important;
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0 #111111 !important;
+}
+
+.neo-letters .neo-letter-empty h2,
+.neo-letters .neo-letter-empty h3,
+.neo-letters .neo-letter-empty p {
+  color: #111111 !important;
+  font-weight: 800;
+}
+
+/* EMPTY STATE BUTTON - YELLOW TO MINT */
+.neo-letters .neo-letter-empty button {
+  background: #A7F3D0 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #111111 !important;
+  font-weight: 900 !important;
+}
+
+.neo-letters .neo-letter-empty button:hover {
+  background: #86E8B9 !important;
+}
+
+/* SHEET CONTENT */
+.neo-letters [role="dialog"] {
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+  box-shadow: 6px 6px 0 #111111 !important;
+}
+
+/* FORM LABEL */
+.neo-letters label {
+  color: #111111 !important;
+  font-weight: 800;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .neo-letters .neo-letter-card {
+    padding: 14px;
+    box-shadow: 4px 4px 0 #111111;
+  }
+
+  .neo-letters .neo-letter-empty {
+    box-shadow: 4px 4px 0 #111111 !important;
+  }
+}
+
+
+/* EMPTY STATE NEO BRUTALISM */
+
+.neo-letters .neo-letter-empty > * {
+  background: #FDE047 !important;
+  color: #111111 !important;
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0 #111111 !important;
+  padding: 32px !important;
+}
+
+.neo-letters .neo-letter-empty h2,
+.neo-letters .neo-letter-empty h3,
+.neo-letters .neo-letter-empty p {
+  color: #111111 !important;
+}
+
+/* MINT BUTTON */
+.neo-letters .neo-letter-empty button {
+  background: #A7F3D0 !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #111111 !important;
+  font-weight: 900 !important;
+}
+
+
+/* =====================================
+   VITABLOX - APPLICATIONS NEO BRUTALISM
+===================================== */
+
+.neo-applications {
+  --neo-black: #111111;
+  --neo-cream: #FFFDF5;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  background: var(--neo-cream) !important;
+  color: var(--neo-black) !important;
+}
+
+/* BUTTONS */
+.neo-applications button {
+  border-radius: 0 !important;
+}
+
+/* APPLICATION CARD */
+.neo-applications .neo-app-card {
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #FFFFFF !important;
+  box-shadow: 5px 5px 0 #111111 !important;
+}
+
+.neo-applications .neo-app-card:hover {
+  background: #FFFDF5 !important;
+}
+
+/* STATUS BADGES */
+.neo-applications .neo-status-badge {
+  border-radius: 0 !important;
+  color: #111111 !important;
+}
+
+.neo-applications .neo-status-saved {
+  background: #FFFFFF !important;
+}
+
+.neo-applications .neo-status-applied {
+  background: #A7F3D0 !important;
+}
+
+.neo-applications .neo-status-test {
+  background: #FDE047 !important;
+}
+
+.neo-applications .neo-status-interview {
+  background: #FF8A65 !important;
+}
+
+.neo-applications .neo-status-offer {
+  background: #C4B5FD !important;
+}
+
+.neo-applications .neo-status-accepted {
+  background: #A7F3D0 !important;
+}
+
+.neo-applications .neo-status-rejected {
+  background: #FF8A65 !important;
+}
+
+/* FOLLOW UP ALERT */
+.neo-applications .neo-app-alert {
+  border-radius: 0 !important;
+}
+
+/* EMPTY STATE */
+.neo-applications .neo-app-empty > * {
+  background: #FDE047 !important;
+  color: #111111 !important;
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0 #111111 !important;
+}
+
+.neo-applications .neo-app-empty h2,
+.neo-applications .neo-app-empty h3,
+.neo-applications .neo-app-empty p {
+  color: #111111 !important;
+}
+
+/* SEARCH INPUT */
+.neo-applications .neo-app-search,
+.neo-applications input {
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #FFFFFF !important;
+  color: #111111 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+/* SELECT */
+.neo-applications select,
+.neo-applications textarea {
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #FFFFFF !important;
+  color: #111111 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+/* FORM LABEL */
+.neo-applications label {
+  color: #111111 !important;
+  font-weight: 800 !important;
+}
+
+/* DIALOG */
+.neo-applications [role="dialog"] {
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+  box-shadow: 6px 6px 0 #111111 !important;
+}
+
+/* LINKS */
+.neo-applications a {
+  color: #111111;
+  font-weight: 700;
+}
+
+/* RESPONSIVE */
+@media (max-width: 640px) {
+  .neo-applications .neo-app-card {
+    box-shadow: 4px 4px 0 #111111 !important;
+  }
+}
+
+
+/* =====================================
+   SETTINGS - NEO BRUTALISM
+   Mengikuti desain halaman CV Saya
+===================================== */
+
+.neo-settings {
+  --neo-black: #111111;
+  --neo-cream: #FFFDF5;
+  --neo-white: #FFFFFF;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  background: var(--neo-cream);
+  color: var(--neo-black);
+  min-height: 100%;
+}
+
+/* Judul halaman */
+.neo-settings h1 {
+  color: var(--neo-black);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Semua Card utama */
+.neo-settings > .grid.items-start > div > * {
+  background: var(--neo-white) !important;
+  color: var(--neo-black) !important;
+  border: 3px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0 var(--neo-black) !important;
+}
+
+/* Judul dalam Card */
+.neo-settings h2,
+.neo-settings h3 {
+  color: var(--neo-black) !important;
+  font-weight: 900 !important;
+}
+
+/* Label */
+.neo-settings label {
+  color: var(--neo-black);
+  font-weight: 700;
+}
+
+/* Deskripsi */
+.neo-settings p {
+  color: #333333;
+}
+
+.neo-settings .text-muted {
+  color: #555555 !important;
+}
+
+/* Input */
+.neo-settings input:not([type="file"]),
+.neo-settings textarea,
+.neo-settings select {
+  background: #FFFFFF !important;
+  color: var(--neo-black) !important;
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 var(--neo-black) !important;
+}
+
+/* Tombol */
+.neo-settings .neo-settings-button,
+.neo-settings .neo-settings-upload {
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--neo-black) !important;
+  font-weight: 800 !important;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Hover seperti tombol CV Saya */
+.neo-settings .neo-settings-button:hover:not(:disabled),
+.neo-settings .neo-settings-upload:hover {
+  transform: translateY(2px) !important;
+  box-shadow: none !important;
+}
+
+/* Simpan backup */
+.neo-settings .neo-settings-button {
+  background: var(--neo-yellow) !important;
+  color: var(--neo-black) !important;
+}
+
+/* Pulihkan file */
+.neo-settings .neo-settings-upload {
+  background: var(--neo-mint) !important;
+  color: var(--neo-black) !important;
+}
+
+/* Hapus data */
+.neo-settings button[class*="danger"] {
+  background: var(--neo-coral) !important;
+  color: var(--neo-black) !important;
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--neo-black) !important;
+}
+
+/* Sheet / modal */
+.neo-settings [role="dialog"] {
+  background: var(--neo-cream);
+  color: var(--neo-black);
+  border: 3px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 7px 7px 0 var(--neo-black);
+}
+
+/* Mengurangi animasi bila diperlukan */
+@media (prefers-reduced-motion: reduce) {
+  .neo-settings .neo-settings-button,
+  .neo-settings .neo-settings-upload {
+    transition: none;
+  }
+}
+
+
+/* =====================================
+   NEO BRUTALISM - TEMPLATE PAGE
+===================================== */
+
+.neo-templates {
+  --neo-black: #111111;
+  --neo-cream: #FFFDF5;
+  --neo-white: #FFFFFF;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  min-height: 100%;
+  color: var(--neo-black);
+  background: var(--neo-cream);
+}
+
+/* Judul halaman */
+.neo-templates h1 {
+  color: var(--neo-black);
+  font-weight: 900;
+}
+
+/* Tombol impor */
+.neo-templates .neo-template-import {
+  background: var(--neo-yellow);
+  color: var(--neo-black);
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--neo-black);
+  font-weight: 900;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-import:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* Filter kategori */
+.neo-templates .neo-template-filter {
+  color: var(--neo-black);
+  background: var(--neo-white);
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--neo-black);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-filter.active {
+  background: var(--neo-mint);
+  color: var(--neo-black);
+  box-shadow: 4px 4px 0 var(--neo-black);
+}
+
+.neo-templates .neo-template-filter:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* Kartu template */
+.neo-templates .neo-template-card {
+  display: block;
+  background: var(--neo-white);
+  color: var(--neo-black);
+  border: 3px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--neo-black);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 var(--neo-black);
+}
+
+.neo-templates .neo-template-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0 var(--neo-black);
+}
+
+/* Area preview template */
+.neo-templates .neo-template-preview {
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+}
+
+/* Pastikan gambar preview tidak membulat */
+.neo-templates .neo-template-preview img {
+  display: block;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+/* Nama template */
+.neo-templates .neo-template-card .font-black {
+  color: var(--neo-black);
+}
+
+/* Deskripsi */
+.neo-templates .text-muted {
+  color: #555555;
+}
+
+/* Tombol di Sheet */
+.neo-templates .neo-template-action {
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--neo-black) !important;
+  font-weight: 800 !important;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-action:hover:not(:disabled) {
+  transform: translateY(2px) !important;
+  box-shadow: none !important;
+}
+
+/* Tombol utama dalam Sheet */
+.neo-templates .neo-template-action.bg-primary {
+  background: var(--neo-yellow) !important;
+  color: var(--neo-black) !important;
+}
+
+/* Preview dalam Sheet */
+.neo-templates .neo-template-sheet-preview {
+  padding: 8px;
+  background: #FFFFFF;
+  border: 3px solid var(--neo-black);
+  box-shadow: 5px 5px 0 var(--neo-black);
+}
+
+.neo-templates .neo-template-sheet-preview img {
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+/* Informasi template */
+.neo-templates .neo-template-info {
+  padding: 12px;
+  background: var(--neo-mint);
+  border: 2px solid var(--neo-black);
+}
+
+/* Daftar CV yang tersedia */
+.neo-templates .neo-template-existing {
+  padding: 12px;
+  background: #FFFFFF;
+  border: 2px solid var(--neo-black);
+}
+
+/* Aksesibilitas */
+.neo-templates button:focus-visible,
+.neo-templates label:focus-within {
+  outline: 3px solid var(--neo-black);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neo-templates .neo-template-card,
+  .neo-templates .neo-template-filter,
+  .neo-templates .neo-template-action,
+  .neo-templates .neo-template-import {
+    transition: none;
+  }
+}
+
+
+/* =========================================
+   NEO BRUTALISM - TEMPLATE PAGE
+   Referensi: Halaman CV Saya
+========================================= */
+
+.neo-templates {
+  --neo-black: #111111;
+  --neo-cream: #FFFDF5;
+  --neo-white: #FFFFFF;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  min-height: 100%;
+  color: var(--neo-black);
+  background: var(--neo-cream);
+}
+
+/* Header halaman */
+.neo-templates h1 {
+  color: var(--neo-black) !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+}
+
+/* Subjudul */
+.neo-templates p {
+  color: #374151;
+}
+
+/* =========================================
+   TOMBOL IMPOR
+========================================= */
+
+.neo-templates .neo-template-import {
+  background: var(--neo-yellow);
+  color: var(--neo-black);
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 var(--neo-black);
+  font-weight: 900;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-import:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* =========================================
+   FILTER KATEGORI
+========================================= */
+
+.neo-templates .neo-template-filter {
+  background: var(--neo-white);
+  color: var(--neo-black);
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--neo-black);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-filter.active {
+  background: var(--neo-mint);
+  color: var(--neo-black);
+  box-shadow: 4px 4px 0 var(--neo-black);
+}
+
+.neo-templates .neo-template-filter:hover {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* =========================================
+   KARTU TEMPLATE
+========================================= */
+
+.neo-templates .neo-template-card {
+  display: block;
+  width: 100%;
+  background: var(--neo-white);
+  color: var(--neo-black);
+  border: 3px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--neo-black);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 var(--neo-black);
+}
+
+.neo-templates .neo-template-card:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0 var(--neo-black);
+}
+
+/* Preview template */
+.neo-templates .neo-template-preview {
+  width: 100%;
+  overflow: hidden;
+  background: var(--neo-white);
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+}
+
+.neo-templates .neo-template-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0 !important;
+}
+
+/* Nama template */
+.neo-templates .neo-template-card .font-black {
+  color: var(--neo-black);
+}
+
+/* Badge dan deskripsi */
+.neo-templates .neo-template-card .text-muted {
+  color: #555555 !important;
+}
+
+/* =========================================
+   SHEET CONTENT
+========================================= */
+
+.neo-templates .neo-template-sheet-preview {
+  padding: 8px;
+  background: var(--neo-white);
+  border: 3px solid var(--neo-black);
+  box-shadow: 5px 5px 0 var(--neo-black);
+}
+
+.neo-templates .neo-template-sheet-preview img {
+  display: block;
+  width: 100%;
+  border-radius: 0 !important;
+}
+
+.neo-templates .neo-template-info {
+  padding: 14px;
+  background: var(--neo-mint);
+  color: var(--neo-black);
+  border: 2px solid var(--neo-black);
+}
+
+.neo-templates .neo-template-info p {
+  color: #333333;
+}
+
+.neo-templates .neo-template-existing {
+  padding: 14px;
+  background: var(--neo-white);
+  color: var(--neo-black);
+  border: 2px solid var(--neo-black);
+}
+
+/* Tombol dalam Sheet */
+.neo-templates .neo-template-action {
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--neo-black) !important;
+  font-weight: 800 !important;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-templates .neo-template-action:hover:not(:disabled) {
+  transform: translateY(2px) !important;
+  box-shadow: none !important;
+}
+
+/* Tombol utama */
+.neo-templates .neo-template-action.bg-primary {
+  background: var(--neo-yellow) !important;
+  color: var(--neo-black) !important;
+}
+
+/* Fokus keyboard */
+.neo-templates button:focus-visible,
+.neo-templates label:focus-within {
+  outline: 3px solid var(--neo-black);
+  outline-offset: 3px;
+}
+
+/* Aksesibilitas */
+@media (prefers-reduced-motion: reduce) {
+  .neo-templates .neo-template-card,
+  .neo-templates .neo-template-filter,
+  .neo-templates .neo-template-action,
+  .neo-templates .neo-template-import {
+    transition: none;
+  }
+}
+
+
+/* =====================================
+   NEO BRUTALISM - APPLICATION SHEET
+===================================== */
+
+/* Panel utama modal */
+dialog.neo-application-sheet {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 8px 8px 0 #111111 !important;
+  padding: 0 !important;
+}
+
+/* Background di belakang modal */
+dialog.neo-application-sheet::backdrop {
+  background: rgb(17 17 17 / 65%);
+  backdrop-filter: blur(3px);
+}
+
+/* Container modal */
+.neo-application-sheet .neo-sheet-content {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+}
+
+/* Header modal */
+.neo-application-sheet .neo-sheet-header {
+  background: #FDE047 !important;
+  color: #111111 !important;
+  border-bottom: 3px solid #111111 !important;
+}
+
+/* Judul modal */
+.neo-application-sheet .neo-sheet-header h2 {
+  color: #111111 !important;
+  font-size: 18px;
+  font-weight: 900 !important;
+}
+
+/* Tombol tutup */
+.neo-application-sheet .neo-sheet-header button {
+  color: #111111 !important;
+  border-radius: 0 !important;
+}
+
+/* Area form */
+.neo-application-sheet .neo-sheet-body {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+}
+
+/* Footer */
+.neo-application-sheet .neo-sheet-footer {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+  border-top: 3px solid #111111 !important;
+}
+
+/* Label */
+.neo-application-sheet .neo-application-form label {
+  color: #111111 !important;
+  font-weight: 800 !important;
+}
+
+/* Input */
+.neo-application-sheet .neo-application-form input,
+.neo-application-sheet .neo-application-form select,
+.neo-application-sheet .neo-application-form textarea {
+  background: #FFFFFF !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+}
+
+/* Hint */
+.neo-application-sheet .neo-application-form .text-muted {
+  color: #555555 !important;
+}
+
+/* Tombol footer */
+.neo-application-sheet .neo-application-action {
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #111111 !important;
+  font-weight: 900 !important;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-application-sheet .neo-application-action:hover:not(:disabled) {
+  transform: translateY(2px) !important;
+  box-shadow: none !important;
+}
+
+/* Hapus */
+.neo-application-sheet .neo-application-delete {
+  background: #FF8A65 !important;
+  color: #111111 !important;
+}
+
+/* Simpan */
+.neo-application-sheet .neo-application-save {
+  background: #FDE047 !important;
+  color: #111111 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neo-application-sheet .neo-application-action {
+    transition: none;
+  }
+}
+
+
+/* =====================================
+   NEO BRUTALISM - BUAT SURAT LAMARAN
+===================================== */
+
+dialog.neo-letter-sheet {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 8px 8px 0 #111111 !important;
+  padding: 0 !important;
+}
+
+dialog.neo-letter-sheet::backdrop {
+  background: rgb(17 17 17 / 65%);
+  backdrop-filter: blur(3px);
+}
+
+/* Container */
+.neo-letter-sheet .neo-sheet-content {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+}
+
+/* Header kuning */
+.neo-letter-sheet .neo-sheet-header {
+  background: #FDE047 !important;
+  color: #111111 !important;
+  border-bottom: 3px solid #111111 !important;
+}
+
+.neo-letter-sheet .neo-sheet-header h2 {
+  color: #111111 !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+}
+
+/* Tombol tutup */
+.neo-letter-sheet .neo-sheet-header button {
+  color: #111111 !important;
+  border-radius: 0 !important;
+}
+
+/* Area isi */
+.neo-letter-sheet .neo-sheet-body {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+}
+
+/* Form */
+.neo-letter-sheet .neo-letter-form {
+  padding: 2px;
+}
+
+.neo-letter-sheet .neo-letter-form label {
+  color: #111111 !important;
+  font-weight: 800 !important;
+}
+
+/* Select */
+.neo-letter-sheet .neo-letter-select {
+  background: #FFFFFF !important;
+  color: #111111 !important;
+  border: 2px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 #111111 !important;
+  min-height: 46px;
+}
+
+/* Hint */
+.neo-letter-sheet .neo-letter-form .text-muted,
+.neo-letter-sheet .neo-letter-empty-hint {
+  color: #555555 !important;
+}
+
+/* Footer */
+.neo-letter-sheet .neo-sheet-footer {
+  background: #FFFDF5 !important;
+  border-top: 3px solid #111111 !important;
+}
+
+/* Tombol buat surat */
+.neo-letter-sheet .neo-letter-create {
+  min-height: 48px;
+  background: #A7F3D0 !important;
+  color: #111111 !important;
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 #111111 !important;
+  font-weight: 900 !important;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-letter-sheet .neo-letter-create:hover:not(:disabled) {
+  transform: translateY(2px) !important;
+  box-shadow: none !important;
+}
+
+.neo-letter-sheet .neo-letter-create:disabled {
+  opacity: 0.5;
+  box-shadow: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neo-letter-sheet .neo-letter-create {
+    transition: none;
+  }
+}
+
+
+/* ==================================
+   NEO BRUTALISM - LETTER EDITOR
+================================== */
+
+.neo-letter-editor {
+  --neo-cream: #FFFDF5;
+  --neo-black: #111111;
+  --neo-yellow: #FDE047;
+  --neo-mint: #A7F3D0;
+  --neo-coral: #FF8A65;
+  --neo-purple: #C4B5FD;
+
+  color: var(--neo-black);
+  background: var(--neo-cream);
+}
+
+/* Header */
+.neo-letter-header {
+  background: var(--neo-yellow);
+  border-bottom: 3px solid var(--neo-black);
+  box-shadow: 0 4px 0 var(--neo-black);
+}
+
+.neo-letter-title {
+  color: var(--neo-black);
+  font-weight: 900;
+}
+
+.neo-letter-status {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Panel */
+.neo-letter-panel {
+  margin-bottom: 18px;
+}
+
+.neo-letter-panel > * {
+  background: #fff !important;
+  color: var(--neo-black) !important;
+  border: 3px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0 var(--neo-black) !important;
+}
+
+/* Section title */
+.neo-letter-editor h2,
+.neo-letter-editor h3 {
+  color: var(--neo-black);
+  font-weight: 900;
+}
+
+/* Labels */
+.neo-letter-editor label {
+  color: var(--neo-black);
+  font-weight: 800;
+}
+
+/* Input, select, textarea */
+.neo-letter-editor input:not([type="file"]),
+.neo-letter-editor select,
+.neo-letter-editor textarea {
+  background: #fff !important;
+  color: var(--neo-black) !important;
+  border: 2px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 3px 3px 0 var(--neo-black);
+}
+
+.neo-letter-editor input:focus,
+.neo-letter-editor select:focus,
+.neo-letter-editor textarea:focus {
+  outline: 2px solid var(--neo-purple) !important;
+  outline-offset: 2px;
+}
+
+/* Attachment rows */
+.neo-letter-attachment {
+  background: #fff;
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+  margin-bottom: 8px;
+  box-shadow: 3px 3px 0 var(--neo-black);
+}
+
+.neo-letter-attachment-option {
+  background: var(--neo-yellow);
+  color: var(--neo-black);
+  border: 2px dashed var(--neo-black);
+  border-radius: 0;
+  font-weight: 800;
+}
+
+.neo-letter-attachment-option:hover {
+  background: var(--neo-mint);
+}
+
+/* Signature */
+.neo-letter-signature-preview {
+  background-color: #fff;
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--neo-black);
+}
+
+.neo-letter-upload {
+  background: var(--neo-purple);
+  color: var(--neo-black);
+  border: 2px solid var(--neo-black);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 var(--neo-black);
+}
+
+/* Buttons */
+.neo-letter-editor button,
+.neo-letter-editor [role="button"] {
+  border-radius: 0;
+}
+
+.neo-letter-editor button:not(:disabled) {
+  font-weight: 800;
+}
+
+.neo-letter-editor button:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* Mobile action bar */
+.neo-letter-mobile-bar {
+  background: var(--neo-cream);
+  border-top: 3px solid var(--neo-black);
+  box-shadow: 0 -4px 0 var(--neo-black);
+}
+
+.neo-letter-preview-btn {
+  background: var(--neo-yellow) !important;
+  color: var(--neo-black) !important;
+  border: 3px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--neo-black) !important;
+  font-weight: 900 !important;
+}
+
+.neo-letter-pdf-btn {
+  background: var(--neo-mint) !important;
+  color: var(--neo-black) !important;
+  border: 3px solid var(--neo-black) !important;
+  border-radius: 0 !important;
+  box-shadow: 4px 4px 0 var(--neo-black) !important;
+  font-weight: 900 !important;
+}
+
+/* Hover button */
+.neo-letter-preview-btn:hover:not(:disabled),
+.neo-letter-pdf-btn:hover:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none !important;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .neo-letter-panel {
+    margin-bottom: 16px;
+  }
+
+  .neo-letter-panel > * {
+    box-shadow: 4px 4px 0 var(--neo-black) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neo-letter-editor *,
+  .neo-letter-editor *::before,
+  .neo-letter-editor *::after {
+    transition: none !important;
+  }
+}
+
+
+/* ADD SECTION SHEET - NEO BRUTALISM */
+
+dialog.neo-add-section-sheet {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+  border: 3px solid #111111 !important;
+  border-radius: 0 !important;
+  box-shadow: 8px 8px 0 #111111 !important;
+  padding: 0 !important;
+}
+
+dialog.neo-add-section-sheet::backdrop {
+  background: rgb(17 17 17 / 65%);
+  backdrop-filter: blur(3px);
+}
+
+.neo-add-section-sheet .neo-sheet-content {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+}
+
+.neo-add-section-sheet .neo-sheet-header {
+  background: #FDE047 !important;
+  color: #111111 !important;
+  border-bottom: 3px solid #111111 !important;
+}
+
+.neo-add-section-sheet .neo-sheet-header h2 {
+  color: #111111 !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+}
+
+.neo-add-section-sheet .neo-sheet-body {
+  background: #FFFDF5 !important;
+  color: #111111 !important;
+}
+
+.neo-add-section-content {
+  padding: 4px;
+}
+
+.neo-add-section-description {
+  margin-bottom: 16px;
+  color: #444444;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Pilihan bagian */
+.neo-add-section-option {
+  position: relative;
+  background: #FFFFFF;
+  color: #111111;
+  border: 2px solid #111111;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #111111;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.neo-add-section-option:nth-child(4n + 1) {
+  background: #FFFFFF;
+}
+
+.neo-add-section-option:hover {
+  background: #A7F3D0;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #111111;
+}
+
+.neo-add-section-option:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.neo-add-section-option:focus-visible {
+  outline: 3px solid #C4B5FD;
+  outline-offset: 3px;
+}
+
+.neo-add-section-option span:first-child {
+  padding-right: 24px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.neo-add-section-option span:nth-child(2) {
+  color: #444444;
+  line-height: 1.4;
+}
+
+.neo-add-section-plus {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.neo-add-section-empty {
+  padding: 16px;
+  background: #FDE047;
+  border: 2px solid #111111;
+  box-shadow: 4px 4px 0 #111111;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neo-add-section-option {
+    transition: none;
+  }
+}
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0f0e0d;
+    --surface: #191716;
+    --sunken: #221f1d;
+    --ink: #f6f6f6;
+    --text: #ededeb;
+    --muted: #a8a29e;
+    --line: #2e2a27;
+    --brand: #93a6ff;
+    --brand-soft: #1c2240;
+    --ok: #4ade80;
+    --warn: #fbbf24;
+    --danger: #f87171;
+    --focus: #93a6ff;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0f0e0d;
+  --surface: #191716;
+  --sunken: #221f1d;
+  --ink: #f6f6f6;
+  --text: #ededeb;
+  --muted: #a8a29e;
+  --line: #2e2a27;
+  --brand: #93a6ff;
+  --brand-soft: #1c2240;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  --focus: #93a6ff;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-sunken: var(--sunken);
+  --color-ink: var(--ink);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+  --color-danger: var(--danger);
+  --font-sans: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+.pdf-page {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 16px 32px -8px rgb(0 0 0 / 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.paper-skeleton {
+  aspect-ratio: 210 / 297;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+}
+
+.pb-safe {
+  padding-bottom: max(0.75rem, calc(0.5rem + env(safe-area-inset-bottom, 0px)));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Custom sleek scrollbar for desktop tables and panes */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--line);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: var(--muted);
+}
+
+
